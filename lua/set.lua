@@ -1,7 +1,5 @@
-vim.g.netrw_liststyle = 3
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.termguicolors = true
 
@@ -24,7 +22,7 @@ vim.opt.swapfile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 5
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
@@ -35,3 +33,8 @@ vim.wo.cursorline = true
 
 vim.o.list = true
 vim.o.listchars = 'tab:> ,extends:›,precedes:‹,trail:·,lead:·,nbsp:⎵'
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "tex",
+    command = "setlocal shiftwidth=2 tabstop=2"
+})

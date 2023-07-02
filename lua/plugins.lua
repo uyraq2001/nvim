@@ -28,13 +28,13 @@ return require('packer').startup(function(use)
     use('powerman/vim-plugin-ruscmd')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use('nvim-tree/nvim-tree.lua')
     use('cappyzawa/trim.nvim')
+    use('numToStr/Comment.nvim')
 
     use({
         "kdheepak/lazygit.nvim",
-        requires = {
-            "nvim-lua/plenary.nvim",
-        },
+        requires = { "nvim-lua/plenary.nvim" }
     })
 
     use {
@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
                 'williamboman/mason.nvim',
                 run = function()
                     vim.cmd('MasonUpdate')
-                end,
+                end
             },
             { 'williamboman/mason-lspconfig.nvim' },
 
