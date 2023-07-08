@@ -30,6 +30,7 @@ return require('packer').startup(function(use)
     use('nvim-tree/nvim-tree.lua')
     use('cappyzawa/trim.nvim')
     use('numToStr/Comment.nvim')
+    use('Shatur/neovim-ayu')
 
     use({
         "kdheepak/lazygit.nvim",
