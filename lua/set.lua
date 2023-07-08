@@ -34,7 +34,5 @@ vim.wo.cursorline = true
 vim.o.list = true
 vim.o.listchars = 'tab:> ,extends:›,precedes:‹,trail:·,lead:·,nbsp:⎵'
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "tex",
-    command = "setlocal shiftwidth=2 tabstop=2"
-})
+vim.api.nvim_create_autocmd("FileType", { pattern = "tex", command = "setlocal shiftwidth=2 tabstop=2" })
+vim.api.nvim_create_autocmd("FileType", { pattern = "nix", command = "setlocal shiftwidth=2 tabstop=2" })

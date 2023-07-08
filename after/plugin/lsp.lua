@@ -13,7 +13,8 @@ lsp.ensure_installed({
     'cssls',
     'texlab',
     'yamlls',
-    'pyright'
+    'pyright',
+    'rnix'
 })
 
 lsp.nvim_workspace()
@@ -69,7 +70,7 @@ lsp.format_on_save({
 })
 
 require('lspconfig').clangd.setup({
-    cmd = { 'clangd-14', '-header-insertion=never' }
+    cmd = { 'clangd', '-header-insertion=never' }
 })
 
 lsp.setup()
