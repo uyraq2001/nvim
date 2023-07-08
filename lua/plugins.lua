@@ -23,7 +23,6 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         { run = ':TSUpdate' }
     )
-    use('theprimeagen/harpoon')
     use('ggandor/leap.nvim')
     use('powerman/vim-plugin-ruscmd')
     use('mbbill/undotree')

@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
 
--- noremap <leader>s :setlocal spell! spelllang=en,ru<cr>
 vim.keymap.set("n", "<leader>s", ":setlocal spell! spelllang=en,ru<cr>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -15,8 +14,6 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
-
--- vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
