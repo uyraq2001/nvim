@@ -33,11 +33,6 @@ return require('packer').startup(function(use)
     use('numToStr/Comment.nvim')
     use('Shatur/neovim-ayu')
 
-    use({
-        "kdheepak/lazygit.nvim",
-        requires = { "nvim-lua/plenary.nvim" }
-    })
-
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
