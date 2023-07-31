@@ -28,7 +28,10 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
     use('lewis6991/gitsigns.nvim')
-    use('nvim-tree/nvim-tree.lua')
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = { { 'nvim-tree/nvim-web-devicons' } }
+    }
     use('cappyzawa/trim.nvim')
     use('numToStr/Comment.nvim')
     use('Shatur/neovim-ayu')
