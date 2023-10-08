@@ -13,7 +13,7 @@ lsp.ensure_installed({
     'cssls',
     'texlab',
     'yamlls',
-    'pyright',
+    'pylsp',
     'rnix'
 })
 
