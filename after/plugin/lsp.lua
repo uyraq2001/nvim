@@ -4,35 +4,40 @@ lsp.on_attach(function(_, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 end)
 
-lsp.ensure_installed({
-    'rust_analyzer',
-    'gopls',
-    'clangd',
-    'lua_ls',
-    'cmake',
-    'cssls',
-    'texlab',
-    'yamlls',
-    'pylsp',
-    'rnix'
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = {
+        'rust_analyzer',
+        'clangd',
+        'lua_ls',
+        'cmake',
+        'texlab',
+        'pylsp',
+        'rnix'
+    },
+    handlers = { lsp.default_setup },
 })
-
-lsp.nvim_workspace()
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ["<C-Space>"] = cmp.mapping.complete(),
-})
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+cmp.setup({
+    sources = {
+        { name = 'nvim_lsp' }
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+        ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+        ["<C-Space>"] = cmp.mapping.complete(),
+        ['<Tab>'] = nil,
+        ['<S-Tab>'] = nil,
+    }),
+    snippet = {
+        expand = function(args)
+            require('luasnip').lsp_expand(args.body)
+        end,
+    },
 })
 
 lsp.on_attach(function(_, bufnr)

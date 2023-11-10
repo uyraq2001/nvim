@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
     use 'nvim-lualine/lualine.nvim'
     use {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
+        tag = '0.1.4',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
     use(
@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
     use('lewis6991/gitsigns.nvim')
     use {
         'nvim-tree/nvim-tree.lua',
-        requires = { { 'nvim-tree/nvim-web-devicons' } }
+        requires = { 'nvim-tree/nvim-web-devicons' }
     }
     use('cappyzawa/trim.nvim')
     use('numToStr/Comment.nvim')
@@ -38,23 +38,19 @@ return require('packer').startup(function(use)
 
     use {
         'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
+        branch = 'v3.x',
         requires = {
-            { 'neovim/nvim-lspconfig' },
-            {
-                'williamboman/mason.nvim',
-                run = function()
-                    vim.cmd('MasonUpdate')
-                end
-            },
+            { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
 
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' },
+            -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'L3MON4D3/LuaSnip' },
         }
     }
-
     if packer_bootstrap then
         require('packer').sync()
     end
