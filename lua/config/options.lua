@@ -3,6 +3,3 @@
 -- Add any additional options here
 
 vim.opt.colorcolumn = "80,100,120"
-
-vim.o.list = true
-vim.o.listchars = "tab:> ,extends:›,precedes:‹,trail:·,lead:·,nbsp:⎵"
