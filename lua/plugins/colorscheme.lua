@@ -1,14 +1,9 @@
 return {
-  "rose-pine/neovim",
-  name = "rose-pine",
+  "Shatur/neovim-ayu",
   lazy = false,
   priority = 1000,
   config = function()
-    require("rose-pine").setup({
-      dark_variant = "main",
-      disable_background = true,
-      disable_float_background = true,
-    })
-    vim.cmd.colorscheme("rose-pine")
+    require("ayu").setup({})
+    vim.cmd.colorscheme("ayu")
   end,
 }
