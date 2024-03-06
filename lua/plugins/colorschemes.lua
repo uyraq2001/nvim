@@ -20,7 +20,7 @@ return {
           },
         },
       })
-      -- vim.cmd.colorscheme("catppuccin")
+      vim.cmd.colorscheme("catppuccin")
     end,
   },
   {
@@ -38,7 +38,7 @@ return {
       vim.g.solarized_borders = true
       vim.g.solarized_disable_background = true
 
-      require("solarized").set()
+      -- require("solarized").set()
     end,
   },
 }
