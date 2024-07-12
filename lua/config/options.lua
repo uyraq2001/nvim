@@ -5,3 +5,6 @@
 vim.opt.colorcolumn = "80,100,120"
 vim.opt.conceallevel = 1
 vim.opt.spelllang = { "en", "ru" }
+
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
