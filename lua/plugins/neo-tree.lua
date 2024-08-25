@@ -10,7 +10,7 @@ return {
       use_libuv_file_watcher = true,
     },
     window = {
-      position = "right",
+      position = "left",
       mappings = {
         ["<space>"] = "none",
         ["Y"] = function(state)
