@@ -1,1 +1,1 @@
-return{ "chrisgrieser/nvim-spider", lazy = true },
+return { "chrisgrieser/nvim-spider", lazy = true }
