@@ -4,7 +4,7 @@ return {
     servers = {
       clangd = {
         cmd = {
-          "clangd-18",
+          "clangd-11",
           "--background-index",
           "--clang-tidy",
           "--header-insertion=iwyu",
